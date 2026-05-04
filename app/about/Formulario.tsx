@@ -1,8 +1,9 @@
-"use client"; // <--- CRUCIAL: Next.js necesita saber que esto es un componente interactivo
+'use client';
 
 import React from 'react';
 import './Formulario.css';
 import { useForm } from 'react-hook-form';
+import { SendEmail } from '@/lib/resend';
 
 export const Formulario = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -13,6 +14,10 @@ export const Formulario = () => {
     reset();
   });
 
+  function handleClick(){
+    SendEmail('maufierro1234@gmail.com','Hello World', '<p> TEST <p>' )
+  }
+
   return (
     <div className="Formulario">
       <h1 className='titulo'>Contactanos</h1>
@@ -20,7 +25,7 @@ export const Formulario = () => {
         <label htmlFor="nombre"> 
           Nombre:
           <input 
-            id="nombre" // Agregado id para que coincida con htmlFor
+            id="nombre"
             type="text" 
             placeholder="Ingrese su nombre" 
             {...register("nombre", {
@@ -81,7 +86,7 @@ export const Formulario = () => {
           {...register('texto')}
         ></textarea>
 
-        <button id="submit" type="submit">Enviar</button>
+        <button id="submit" type="submit" onClick={handleClick}>Enviar</button>
       </form>
     </div>
   );
