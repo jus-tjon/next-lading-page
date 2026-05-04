@@ -1,14 +1,20 @@
-import React from 'react';
-import { Formulario } from './about/Formulario';
+import Hero from "./components/sections/Hero";
+import { Formulario } from "./components/ui/Formulario";
 
-export default function AboutPage() {
+const Home = () => {
   return (
-    <main>
-      <header>
-      <h1>Aca vamos a empezar</h1>
-      <p>Primer parrafo del mundo</p>
-      </header>
-      <Formulario></Formulario>
-    </main>
-  )
-}
+    <div>
+      <main>
+        <header>
+          <h1>Aca vamos a empezar</h1>
+          <p>Primer parrafo del mundo</p>
+        </header>
+        <Formulario></Formulario>
+      </main>
+      Home
+      <Hero></Hero>
+    </div>
+  );
+};
+
+export default Home;
