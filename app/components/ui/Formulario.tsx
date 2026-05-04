@@ -13,15 +13,30 @@ export const Formulario = () => {
     reset,
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-    alert("Datos enviados");
-    reset();
-  });
+  const onSubmit = handleSubmit(async (data) => {
+  const emailBody = `
+    <h1>Nuevo mensaje de contacto</h1>
+    <p><strong>Nombre del cliente:</strong> ${data.nombre}</p>
+    <p><strong>Correo del cliente:</strong> ${data.correo}</p>
+    <p><strong>Telefono de contacto:</strong> ${data.telefono}</p>
+    <p>${data.texto}</p>
+  `;
 
-  function handleClick() {
-    SendEmail("maufierro1234@gmail.com", "Hello World", "<p> TEST <p>");
+  try {
+    
+    await SendEmail(
+      "maufierro1234@gmail.com",
+      `Nueva consulta: ${data.service}`,
+      emailBody
+    );
+
+    alert("¡Mail enviado con éxito!");
+    reset();
+  } catch (err) {
+    console.error("Error al enviar:", err);
+    alert("Hubo un problema al enviar el mail.");
   }
+});
 
   return (
     <div className="Formulario">
@@ -98,7 +113,7 @@ export const Formulario = () => {
           {...register("texto")}
         ></textarea>
 
-        <button id="submit" type="submit" onClick={handleClick}>
+        <button id="submit" type="submit">
           Enviar
         </button>
       </form>
