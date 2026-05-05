@@ -14,7 +14,7 @@ export const Formulario = () => {
   } = useForm();
 
   const onSubmit = handleSubmit(async (data) => {
-  const emailBody = `
+    const emailBody = `
     <h1>Nuevo mensaje de contacto</h1>
     <p><strong>Nombre del cliente:</strong> ${data.nombre}</p>
     <p><strong>Correo del cliente:</strong> ${data.correo}</p>
@@ -22,24 +22,23 @@ export const Formulario = () => {
     <p>${data.texto}</p>
   `;
 
-  try {
-    
-    await SendEmail(
-      "maufierro1234@gmail.com",
-      `Nueva consulta: ${data.service}`,
-      emailBody
-    );
+    try {
+      await SendEmail(
+        "maufierro1234@gmail.com",
+        `Nueva consulta: ${data.service}`,
+        emailBody,
+      );
 
-    alert("¡Mail enviado con éxito!");
-    reset();
-  } catch (err) {
-    console.error("Error al enviar:", err);
-    alert("Hubo un problema al enviar el mail.");
-  }
-});
+      alert("¡Mail enviado con éxito!");
+      reset();
+    } catch (err) {
+      console.error("Error al enviar:", err);
+      alert("Hubo un problema al enviar el mail.");
+    }
+  });
 
   return (
-    <div className="Formulario">
+    <div className="Formulario" id="formulario">
       <h1 className="titulo">Contactanos</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="nombre">

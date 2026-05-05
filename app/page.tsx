@@ -5,14 +5,10 @@ const Home = () => {
   return (
     <div>
       <main>
-        <header>
-          <h1>Aca vamos a empezar</h1>
-          <p>Primer parrafo del mundo</p>
-        </header>
+        <Hero></Hero>
         <Formulario></Formulario>
       </main>
       Home
-      <Hero></Hero>
     </div>
   );
 };
