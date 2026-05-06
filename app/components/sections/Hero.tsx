@@ -9,7 +9,7 @@ const inter = Inter({
 const Hero = () => {
   return (
     <>
-      <section
+      <section id='hero'
         className={`${inter.className} flex flex-col min-h-screen justify-center items-center`}
       >
         <div className="flex items-center w-full justify-center">
