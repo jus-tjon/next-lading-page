@@ -1,3 +1,5 @@
+import { Footer } from "./components/sections/Footer";
+import { Header } from "./components/sections/Header";
 import Hero from "./components/sections/Hero";
 import Hero2 from "./components/sections/Hero2";
 import ButtonIcon from "./components/ui/ButtonIcon";
@@ -8,10 +10,11 @@ const Home = () => {
   return (
     <div>
       <main>
+        <Header></Header>
         <Hero2 />
         <Formulario></Formulario>
+        <Footer></Footer>
       </main>
-      Home
     </div>
   );
 };

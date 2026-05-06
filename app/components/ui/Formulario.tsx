@@ -38,7 +38,8 @@ export const Formulario = () => {
   });
 
   return (
-    <div className="Formulario" id="formulario">
+    <div className="Formulario">
+    <div className="Forms" id="formulario">
       <h1 className="titulo">Contactanos</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="nombre">
@@ -116,6 +117,7 @@ export const Formulario = () => {
           Enviar
         </button>
       </form>
+    </div>
     </div>
   );
 };

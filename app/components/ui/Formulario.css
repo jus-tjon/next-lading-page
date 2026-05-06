@@ -1,18 +1,31 @@
 .Formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.Forms {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-self: center;
     text-align: center;
+    margin: 7%;
+    border: 3px solid black;
+    width: 400px;
+    padding-bottom: 30px;
 }
 
-.Formulario .titulo{
-    padding-bottom: 10px;
+.Forms .titulo{
+    padding-bottom: 20px;
     display: block;
     font-size: 24px;
 }
 
-.Formulario label {
+.Forms label {
   display: flex;
   justify-content: space-between; /* Empuja el input al extremo opuesto */
   align-items: center;
@@ -21,14 +34,14 @@
   width: 300px; /* Ajusta el ancho para que todos midan lo mismo */
 }
 
-.Formulario input{
-    border: 3px solid #EEEEEE;
+.Forms input{
+    border: 3px solid black;
     border-radius: 8px;
     padding: 10px;
     outline: none;
 }
 
-.Formulario span{
+.Forms span{
   display: block;
   color: tomato;
   font-size: x-small;
@@ -40,8 +53,18 @@
   height: 100px;
   padding-top: 0;
   resize: none;
+  border-radius: 5px;
+  border: 3px solid black;
 }
 
 #submit{
   margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
