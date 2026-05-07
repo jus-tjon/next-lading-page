@@ -4,3 +4,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+@theme {
+    --color-primary-blue: #5682B1;
+    --color-secondary-blue: #739EC9;
+    --color-primary-pink: #FFE8DB;
+}
