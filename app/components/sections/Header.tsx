@@ -7,13 +7,13 @@ const inter = Inter({
 
 export const Header = () => {
   return (
-    <div className={`${inter.className} sticky top-0`}>
-        <header className='w-full flex justify-end-safe gap-5 pt-4 px-8'>
-            <a href="#hero" className='rounded-3xl transition delay-50 hover:bg-blue-600 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
+    <div className={`${inter.className} z-50 sticky top-0 bg-azul-marino`}>
+        <header className='w-full flex justify-end-safe gap-5 pt-4 px-8 pb-4 '>
+            <a href="#hero" className='bg-marron-cafe text-white rounded-3xl transition delay-50 hover:bg-marron-nuez duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
                 Home</a>
-            <a className='rounded-3xl transition delay-50 hover:bg-blue-600 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
+            <a className='bg-marron-cafe text-white rounded-3xl transition delay-50 hover:bg-marron-nuez duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
                 Sobre Mi</a>
-            <a href="#formulario" className='rounded-3xl transition delay-50 hover:bg-blue-600 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
+            <a href="#formulario" className='bg-marron-cafe text-white rounded-3xl transition delay-50 hover:bg-marron-nuez duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 py-1 px-2 cursor-pointer'>
                 Contactanos</a> 
         </header>
     </div>

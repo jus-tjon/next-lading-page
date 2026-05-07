@@ -24,8 +24,8 @@ const Hero2 = () => {
   return (
     <>
       {/* Izquierda */}
-      <section
-        className={`flex relative min-h-screen items-start mx-[15%] tracking-tight ${ptSerif.className}`}
+      <section id='hero'
+        className={`bg-[#FFE8DB] flex relative min-h-100 items-start mx-[15%] py-0 mt-0 tracking-tight ${ptSerif.className}`}
       >
         <div className="flex flex-col z-20 justify-center min-h-screen">
           <p className="text-2xl tracking-[-0.03em]">Hola, soy Matías,</p>
@@ -50,7 +50,7 @@ const Hero2 = () => {
         </div>
         {/* Derecha relative w-100 h-125 flex justify-center overflow-hidden */}
         <div className="absolute z-0 right-0 top-0 h-full w-[50%] overflow-hidden">
-          <div className="relative w-full h-full overflow-hidden rounded-b-[200px]">
+          <div className="relative w-full h-170 overflow-hidden rounded-b-[200px] pt-0">
             <Image
               src="/matias2.jpg"
               alt="Matías Herrera sonriendo"

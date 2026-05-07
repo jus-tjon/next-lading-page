@@ -3,10 +3,13 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-margin-top: 150px;
 }
 
 @theme {
-    --color-primary-blue: #5682B1;
-    --color-secondary-blue: #739EC9;
-    --color-primary-pink: #FFE8DB;
+    --color-azul-marino: #202940;
+    --color-marron-cafe: #4B4038;
+    --color-marron-nuez: #9A8678;
+    --color-marron-claro: #CAAA98;
+
 }
