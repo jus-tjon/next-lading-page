@@ -1,32 +1,69 @@
-import { Inter } from "next/font/google";
+import React from "react";
+import Image from "next/image";
+import ButtonIcon from "../ui/ButtonIcon";
 import { ArrowDown } from "lucide-react";
-import Button from "../ui/Button";
+import { Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
+import { PT_Serif } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
-const Hero = () => {
+const ptSerif = PT_Serif({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const Hero2 = () => {
   return (
     <>
+      {/* Izquierda */}
       <section
-        className={`${inter.className} flex flex-col min-h-screen justify-center items-center`}
+        id="hero"
+        className={`bg-[#FFE8DB] flex relative min-h-100 items-start mx-[15%] py-0 mt-0 tracking-tight ${ptSerif.className}`}
       >
-        <div className="flex items-center w-full justify-center">
-          <p className="p-3 text-[1rem]">Matías Herrera</p>
-          <span className="border rounded-sm px-3 py-1 text-[1rem]">
-            Fullstack Developer & API Integration
-          </span>
+        <div className="flex flex-col z-20 justify-center min-h-screen">
+          <p className="text-2xl tracking-[-0.03em]">Hola, soy Matías,</p>
+          <h1
+            className={`text-[92px] my-2.5 tracking-[-0.045em] font-extrabold leading-21 ${inter.className}`}
+          >
+            Fullstack Dev <br />{" "}
+            <span
+              className={`${playfairDisplay.className} font-normal tracking-[-0.03em]`}
+            >
+              & API Integrator
+            </span>
+          </h1>
+          <p className={`mb-4 text-lg ${inter.className} tracking-[-0.035em]`}>
+            Desarrollo aplicaciones web y APIs enfocadas en <br />
+            rendimiento y escalabilidad. Ayudo a empresas a integrar <br />
+            sistemas y transformar ideas en soluciones confiables.
+          </p>
+          <ButtonIcon Icon={ArrowDown} href="#formulario">
+            Hablemos de tu proyecto
+          </ButtonIcon>
         </div>
-        <h1 className="text-center text-[2.5rem] mb-12 mt-8 font-medium tracking-[0.015]">
-          Desarrollo aplicaciones web y APIs
-        </h1>
-        <Button href="#formulario">
-          Hablemos de tu proyecto <ArrowDown size={16} />
-        </Button>
+        {/* Derecha relative w-100 h-125 flex justify-center overflow-hidden */}
+        <div className="absolute z-0 right-0 top-0 h-full w-[50%] overflow-hidden">
+          <div className="relative w-full h-170 overflow-hidden rounded-b-[200px] pt-0">
+            <Image
+              src="/matias2.jpg"
+              alt="Matías Herrera sonriendo"
+              className="object-cover rounded-b-[200px] object-bottom"
+              fill
+              loading="eager"
+            />
+          </div>
+        </div>
       </section>
     </>
   );
 };
 
-export default Hero;
+export default Hero2;

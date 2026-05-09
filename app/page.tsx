@@ -1,6 +1,7 @@
 import { Footer } from "./components/sections/Footer";
 import { Header } from "./components/sections/Header";
-import Hero2 from "./components/sections/Hero2";
+import Hero from "./components/sections/Hero";
+import Projects from "./components/sections/Projects";
 import { Formulario } from "./components/ui/Formulario";
 
 const Home = () => {
@@ -8,7 +9,8 @@ const Home = () => {
     <div>
       <main className="bg-[#FFE8DB]">
         <Header></Header>
-        <Hero2 />
+        <Hero />
+        <Projects />
         <Formulario></Formulario>
         <Footer></Footer>
       </main>
