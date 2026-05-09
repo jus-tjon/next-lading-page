@@ -25,7 +25,7 @@ const Hero2 = () => {
     <>
       {/* Izquierda */}
       <section id='hero'
-        className={`bg-[#FFE8DB] flex relative min-h-100 items-start mx-[15%] py-0 mt-0 tracking-tight ${ptSerif.className}`}
+        className={`bg-[#FFE8DB] scroll-mt-20 flex relative min-h-100 items-start mx-[15%] py-0 mt-0 tracking-tight ${ptSerif.className}`}
       >
         <div className="flex flex-col z-20 justify-center min-h-screen">
           <p className="text-2xl tracking-[-0.03em]">Hola, soy Matías,</p>
