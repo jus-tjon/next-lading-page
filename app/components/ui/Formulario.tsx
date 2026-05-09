@@ -48,7 +48,8 @@ export const Formulario = () => {
   });
 
   return (
-<section className='flex justify-center items-center min-h-screen w-full scroll-mt-[20px] my-[100px] md:my-[160px]' id="formulario">
+<section className='flex justify-center items-center min-h-screen w-full scroll-mt-[20px] mt-[100px] mb-[50px] md:mb-[0px] md:mt-[160px]' 
+                    id="formulario">
   <div className="flex flex-col items-center justify-center w-[95%] md:w-[80%] lg:w-[1050px] p-6 md: bg-[#7D6D62] rounded-xl shadow-2xl">
     <h1 className={`${playfairDisplay.className} text-white pb-8 block text-3xl font-bold`}>Contactanos</h1>
     
@@ -58,7 +59,8 @@ export const Formulario = () => {
       <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
         <label className={`${inter.className} text-white font-medium min-w-[100px]`} htmlFor="nombre">Nombre:</label>
         <div className="flex-grow">
-          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white placeholder:text-white/50"
+          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white
+           placeholder:text-white/50"
             id="nombre"
             type="text"
             placeholder="Ingrese su nombre"
@@ -74,7 +76,8 @@ export const Formulario = () => {
       <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
         <label className={`${inter.className} text-white font-medium min-w-[100px]`} htmlFor="correo">E-Mail:</label>
         <div className="flex-grow">
-          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white placeholder:text-white/50"
+          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+          placeholder:text-white/50"
             id="correo"
             type="email"
             placeholder="Tu email"
@@ -90,7 +93,8 @@ export const Formulario = () => {
       <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
         <label className={`${inter.className} text-white font-medium min-w-[100px]`} htmlFor="telefono">Teléfono:</label>
         <div className="flex-grow">
-          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white placeholder:text-white/50"
+          <input className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+          placeholder:text-white/50"
             id="telefono"
             type="text"
             placeholder="Tu teléfono"

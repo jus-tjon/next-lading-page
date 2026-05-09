@@ -20,14 +20,14 @@ export const Header = () => {
     <nav className='z-50 sticky top-0 bg-azul-marino'>
         <div className='w-full flex justify-between pt-4 px-8 pb-4 '>
           <div>
-            <p className={`${playfairDisplay.className} text-marron-claro text-2xl`}>Matias Herrera</p>
+            <p className={`${playfairDisplay.className} text-marron-claro text-2xl hover:cursor-default`}>Matias Herrera</p>
           </div>
           
           {/*Menu Hamburguesa*/}
           <div className='lg:hidden'>
             <button onClick={toogleMenu} className='text-marron-nuez hover:text-marron-claro focus-outline-none focus-text-white cursor-pointer'>
               <svg className='h-6 w-6' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                <path strokeLinecap='round' strokeLinejoin='round' stroke-width='2' d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12H16M4 18h16'}>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12H16M4 18h16'}>
                 </path>
               </svg>
             </button>
