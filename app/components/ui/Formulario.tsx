@@ -2,7 +2,18 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import { SendEmail } from "@/lib/resend";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const Formulario = () => {
   const {
@@ -38,124 +49,142 @@ export const Formulario = () => {
 
   return (
     <section
-      className="flex justify-center items-center min-h-screen w-full scroll-mt-3.75 mb-[200px] mt-[200px]"
+      className="flex justify-center items-center min-h-screen w-full scroll-mt-[20px] mt-[100px] mb-[50px] md:mb-[0px] md:mt-[160px]"
       id="formulario"
     >
-      <div className="flex flex-col items-center justify-center self-center text-center m-[7%] w-[1050px] pb-[30px] bg-[#7D6D62]">
-        <h1 className="text-white pb-5 block text-[24px]">Contactanos</h1>
-        <form onSubmit={onSubmit}>
-          <label
-            className="text-white flex justify-between items-center gap-5 mb-2.5"
-            htmlFor="nombre"
-          >
-            Nombre:
-            <input
-              className="bg-marron-nuez border-[3px] border-marron-claro rounded-lg p-2.5 outline-none w-200"
-              id="nombre"
-              type="text"
-              placeholder="Ingrese su nombre"
-              {...register("nombre", {
-                required: { value: true, message: "Nombre es requerido" },
-                minLength: {
-                  value: 3,
-                  message: "El nombre debe tener al menos 3 caracteres",
-                },
-                maxLength: {
-                  value: 20,
-                  message: "El nombre debe tener máximo 20 caracteres",
-                },
-              })}
-            />
-          </label>
-          {errors.nombre && (
-            <span className="block text-[tomato] text-[x-small]">
-              {String(errors.nombre.message)}
-            </span>
-          )}
+      <div className="flex flex-col items-center justify-center w-[95%] md:w-[80%] lg:w-[1050px] p-6 md: bg-[#7D6D62] rounded-xl shadow-2xl">
+        <h1
+          className={`${playfairDisplay.className} text-white pb-8 block text-3xl font-bold`}
+        >
+          Contactanos
+        </h1>
 
-          <br />
+        <form onSubmit={onSubmit} className="w-full">
+          {/* Nombre */}
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
+            <label
+              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              htmlFor="nombre"
+            >
+              Nombre:
+            </label>
+            <div className="flex-grow">
+              <input
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white
+           placeholder:text-white/50"
+                id="nombre"
+                type="text"
+                placeholder="Ingrese su nombre"
+                {...register("nombre", {
+                  required: { value: true, message: "Nombre es requerido" },
+                })}
+              />
+              {errors.nombre && (
+                <span className="text-[tomato] text-[x-small] block mt-1">
+                  {String(errors.nombre.message)}
+                </span>
+              )}
+            </div>
+          </div>
 
-          <label
-            className="text-white flex justify-between items-center gap-[20px] mb-[10px]"
-            htmlFor="correo"
-          >
-            E-Mail:
-            <input
-              className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-200"
-              id="correo"
-              type="email"
-              placeholder="Ingrese su direccion de correo"
-              {...register("correo", {
-                required: { value: true, message: "Correo es requerido" },
-                pattern: {
-                  value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                  message: "Formato de correo no válido",
-                },
-              })}
-            />
-          </label>
-          {errors.correo && (
-            <span className="block text-[tomato] text-[x-small]">
-              {String(errors.correo.message)}
-            </span>
-          )}
+          {/* E-Mail */}
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
+            <label
+              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              htmlFor="correo"
+            >
+              E-Mail:
+            </label>
+            <div className="flex-grow">
+              <input
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+          placeholder:text-white/50"
+                id="correo"
+                type="email"
+                placeholder="Tu email"
+                {...register("correo", {
+                  required: { value: true, message: "Correo es requerido" },
+                })}
+              />
+              {errors.correo && (
+                <span className="text-[tomato] text-[x-small] block mt-1">
+                  {String(errors.correo.message)}
+                </span>
+              )}
+            </div>
+          </div>
 
-          <br />
+          {/* Telefono */}
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
+            <label
+              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              htmlFor="telefono"
+            >
+              Teléfono:
+            </label>
+            <div className="flex-grow">
+              <input
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+          placeholder:text-white/50"
+                id="telefono"
+                type="text"
+                placeholder="Tu teléfono"
+                {...register("telefono", { required: "Requerido" })}
+              />
+              {errors.telefono && (
+                <span className="text-[tomato] text-[x-small] block mt-1">
+                  {String(errors.telefono.message)}
+                </span>
+              )}
+            </div>
+          </div>
 
-          <label
-            className="text-white flex justify-between items-center gap-[20px] mb-[10px]"
-            htmlFor="telefono"
-          >
-            Telefono:
-            <input
-              className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-200"
-              id="telefono"
-              type="text"
-              placeholder="Ingrese un telefono"
-              {...register("telefono", {
-                required: { value: true, message: "Telefono es requerido" },
-              })}
-            />
-          </label>
-          {errors.telefono && (
-            <span className="block text-[tomato] text-[x-small]">
-              {String(errors.telefono.message)}
-            </span>
-          )}
-
-          <br />
-
-          <label
-            className="text-white flex items-center justify-between gap-[px] mb-[10px] w-full pb-[10px]"
-            htmlFor="service"
-          >
-            Servicio:
+          {/* Servicio */}
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
+            <label
+              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              htmlFor="service"
+            >
+              Servicio:
+            </label>
             <select
-              className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] pl-[5px] py-[5px]"
+              className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] px-[10px] py-[10px] flex-grow text-white outline-none"
               id="service"
               {...register("service")}
             >
-              <option value="paginaweb">Pagina Web</option>
+              <option value="paginaweb">Página Web</option>
+              <option value="api">Integración de API</option>
+              <option value="fullstack">Desarrollo Fullstack</option>
             </select>
-          </label>
+          </div>
 
-          <label className="text-white flex gap-[20px]" htmlFor="texto">
-            Hace tus preguntas:
+          {/* Textarea */}
+          <div className="flex flex-col md:flex-row gap-2 md:gap-8 mb-4">
+            <label
+              className={`${inter.className} text-white font-medium min-w-[100px] pt-2`}
+              htmlFor="texto"
+            >
+              Mensaje:
+            </label>
             <textarea
-              className="bg-marron-nuez block h-[100px] w-200 pt-0 resize-none rounded-[5px] border-[3px] border-marron-claro"
+              className="bg-marron-nuez h-[120px] flex-grow p-3 resize-none rounded-[5px] border-[3px] border-marron-claro text-white outline-none placeholder:text-white/50"
               id="texto"
-              placeholder="Escribi aqui..."
+              placeholder="Escribí tus dudas aquí..."
               {...register("texto")}
             ></textarea>
-          </label>
+          </div>
 
-          <button
-            className="mt-[10px] px-[15px] py-[10px] rounded-[5px] bg-marron-cafe text-white cursor-pointer transition-colors hover:bg-marron-claro"
-            id="submit"
-            type="submit"
-          >
-            Enviar
-          </button>
+          <div className="w-full flex justify-end">
+            <button
+              className="w-full md:w-auto px-12 py-3 rounded-lg bg-marron-cafe text-white font-bold cursor-pointer transition-all 
+           transition delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:border-marron-cafe hover:bg-marron-claro hover:text-black 
+           border-2 border-marron-claro"
+              id="submit"
+              type="submit"
+            >
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
     </section>
