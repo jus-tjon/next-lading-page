@@ -7,7 +7,7 @@ import { Formulario } from "./components/ui/Formulario";
 const Home = () => {
   return (
     <div>
-      <main className="bg-[#FFE8DB]">
+      <main className="bg-zinc-100">
         <Header></Header>
         <Hero />
         <Projects />

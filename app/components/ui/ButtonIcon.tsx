@@ -15,11 +15,11 @@ const ButtonIcon = ({ children, Icon, href }: ButtonIconProps) => {
   return (
     <a href={href}>
       <button
-        className={`btn bg-azul-marino text-white justify-between border-3 btn-circle text-[16px] px-4 py-6 btn-neutral group flex hover:bg-primary-pink hover:bg-marron-claro w-fit ${inter.className}`}
+        className={`btn bg-azul-marino text-zinc-100 hover:text-black justify-between border-2 btn-circle text-[16px] px-4 py-6 btn-neutral group flex hover:bg-zinc-200 w-fit ${inter.className}`}
       >
         {children}
-        <span className="bg-white rounded-full ml-auto p-0.5 flex items-center justify-center group-hover:bg-black group-hover:text-black">
-          <Icon className="text-black w-5 h-5 group-hover:text-white " />
+        <span className="bg-zinc-100 rounded-full ml-auto p-0.5 flex items-center justify-center group-hover:bg-black group-hover:text-black">
+          <Icon className="text-black w-5 h-5 group-hover:text-zinc-100 " />
         </span>
       </button>
     </a>

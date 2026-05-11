@@ -20,50 +20,62 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
-const Hero2 = () => {
+const Hero = () => {
   return (
-    <>
-      {/* Izquierda */}
-      <section
-        id="hero"
-        className={`bg-[#FFE8DB] flex relative min-h-100 items-start mx-[15%] py-0 mt-0 tracking-tight ${ptSerif.className}`}
-      >
-        <div className="flex flex-col z-20 justify-center min-h-screen">
-          <p className="text-2xl tracking-[-0.03em]">Hola, soy Matías,</p>
-          <h1
-            className={`text-[92px] my-2.5 tracking-[-0.045em] font-extrabold leading-21 ${inter.className}`}
+    <section
+      id="hero"
+      className={`
+        bg-zinc-100 relative flex flex-col px-6 pt-0 pb-16 tracking-tight  lg:min-h-screen
+        lg:flex-row lg:items-start lg:mx-[10%] lg:px-0 lg:pb-0 md:mx-[10%] ${ptSerif.className}
+      `}
+    >
+      {/* Imagen */}
+      <div className="relative order-1 w-full h-105 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[50%] lg:overflow-hidden">
+        <div className="relative h-full w-full overflow-hidden rounded-b-[80px] lg:h-170 lg:rounded-b-[200px]">
+          <Image
+            src="/matias2.jpg"
+            alt="Matías Herrera sonriendo"
+            className="object-cover object-[center_60%] rounded-b-[80px] lg:rounded-b-[200px]"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      {/* Texto */}
+      <div className="relative z-20 order-2 flex flex-col justify-center pt-10 lg:min-h-screen lg:w-[55%] lg:pt-0">
+        <p className="text-xl tracking-[-0.03em] lg:text-2xl">
+          Hola, soy Matías,
+        </p>
+
+        <h1
+          className={`text-[52px] leading-[0.95] my-3 tracking-[-0.045em] font-extrabold sm:text-[68px] lg:text-[92px] lg:leading-21 ${inter.className}`}
+        >
+          Fullstack Dev <br />
+          <span
+            className={`${playfairDisplay.className} font-normal tracking-[-0.03em]`}
           >
-            Fullstack Dev <br />{" "}
-            <span
-              className={`${playfairDisplay.className} font-normal tracking-[-0.03em]`}
-            >
-              & API Integrator
-            </span>
-          </h1>
-          <p className={`mb-4 text-lg ${inter.className} tracking-[-0.035em]`}>
-            Desarrollo aplicaciones web y APIs enfocadas en <br />
-            rendimiento y escalabilidad. Ayudo a empresas a integrar <br />
-            sistemas y transformar ideas en soluciones confiables.
-          </p>
+            & API Integrator
+          </span>
+        </h1>
+
+        <p
+          className={`mb-6 text-base tracking-[-0.035em] sm:text-lg ${inter.className}`}
+        >
+          Desarrollo aplicaciones web y APIs enfocadas en rendimiento y
+          escalabilidad. Ayudo a empresas a integrar sistemas y transformar
+          ideas en soluciones confiables.
+        </p>
+
+        <div className="w-full">
           <ButtonIcon Icon={ArrowDown} href="#formulario">
             Hablemos de tu proyecto
           </ButtonIcon>
         </div>
-        {/* Derecha relative w-100 h-125 flex justify-center overflow-hidden */}
-        <div className="absolute z-0 right-0 top-0 h-full w-[50%] overflow-hidden">
-          <div className="relative w-full h-170 overflow-hidden rounded-b-[200px] pt-0">
-            <Image
-              src="/matias2.jpg"
-              alt="Matías Herrera sonriendo"
-              className="object-cover rounded-b-[200px] object-bottom"
-              fill
-              loading="eager"
-            />
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
-export default Hero2;
+export default Hero;

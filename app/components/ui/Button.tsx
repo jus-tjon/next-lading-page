@@ -6,10 +6,10 @@ type ButtonProps = {
 
 const Button = ({ children, className, href }: ButtonProps) => {
   const base =
-    "btn btn-neutral flex gap-2 self-center bg-blue-600 py-3 px-7 text-white transition cursor-pointer";
+    "btn btn-neutral bg-zinc-200 hover:bg-zinc-300 flex gap-2 w-full py-6 px-7 text-black transition cursor-pointer";
 
   return (
-    <a href={href}>
+    <a href={href} className="block w-full">
       <button className={`${base} ${className}`}>{children}</button>
     </a>
   );

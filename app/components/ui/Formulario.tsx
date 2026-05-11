@@ -49,10 +49,10 @@ export const Formulario = () => {
 
   return (
     <section
-      className="flex justify-center items-center min-h-screen w-full scroll-mt-[20px] mt-[100px] mb-[50px] md:mb-[0px] md:mt-[160px]"
+      className="flex justify-center items-center min-h-screen w-full scroll-mt-5 mt-25 mb-12.5 md:mb-0 md:mt-40"
       id="formulario"
     >
-      <div className="flex flex-col items-center justify-center w-[95%] md:w-[80%] lg:w-[1050px] p-6 md: bg-[#7D6D62] rounded-xl shadow-2xl">
+      <div className="flex flex-col items-center justify-center w-[95%] md:w-[80%] lg:w-262.5 p-6 md: bg-[#7D6D62] rounded-3xl shadow-2xl">
         <h1
           className={`${playfairDisplay.className} text-white pb-8 block text-3xl font-bold`}
         >
@@ -63,14 +63,14 @@ export const Formulario = () => {
           {/* Nombre */}
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
             <label
-              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              className={`${inter.className} text-white font-medium min-w-25`}
               htmlFor="nombre"
             >
               Nombre:
             </label>
-            <div className="flex-grow">
+            <div className="grow">
               <input
-                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-lg p-2.5 outline-none w-full text-white
            placeholder:text-white/50"
                 id="nombre"
                 type="text"
@@ -90,14 +90,14 @@ export const Formulario = () => {
           {/* E-Mail */}
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
             <label
-              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              className={`${inter.className} text-white font-medium min-w-25`}
               htmlFor="correo"
             >
               E-Mail:
             </label>
-            <div className="flex-grow">
+            <div className="grow">
               <input
-                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-lg p-2.5 outline-none w-full text-white 
           placeholder:text-white/50"
                 id="correo"
                 type="email"
@@ -117,14 +117,14 @@ export const Formulario = () => {
           {/* Telefono */}
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
             <label
-              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              className={`${inter.className} text-white font-medium min-w-25`}
               htmlFor="telefono"
             >
               Teléfono:
             </label>
-            <div className="flex-grow">
+            <div className="grow">
               <input
-                className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] p-[10px] outline-none w-full text-white 
+                className="bg-marron-nuez border-[3px] border-marron-claro rounded-lg p-2.5 outline-none w-full text-white 
           placeholder:text-white/50"
                 id="telefono"
                 type="text"
@@ -142,13 +142,13 @@ export const Formulario = () => {
           {/* Servicio */}
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 mb-6">
             <label
-              className={`${inter.className} text-white font-medium min-w-[100px]`}
+              className={`${inter.className} text-white font-medium min-w-25`}
               htmlFor="service"
             >
               Servicio:
             </label>
             <select
-              className="bg-marron-nuez border-[3px] border-marron-claro rounded-[8px] px-[10px] py-[10px] flex-grow text-white outline-none"
+              className="bg-marron-nuez border-[3px] border-marron-claro rounded-lg px-2.5 py-2.5 grow text-white outline-none"
               id="service"
               {...register("service")}
             >
@@ -161,13 +161,13 @@ export const Formulario = () => {
           {/* Textarea */}
           <div className="flex flex-col md:flex-row gap-2 md:gap-8 mb-4">
             <label
-              className={`${inter.className} text-white font-medium min-w-[100px] pt-2`}
+              className={`${inter.className} text-white font-medium min-w-25 pt-2`}
               htmlFor="texto"
             >
               Mensaje:
             </label>
             <textarea
-              className="bg-marron-nuez h-[120px] flex-grow p-3 resize-none rounded-[5px] border-[3px] border-marron-claro text-white outline-none placeholder:text-white/50"
+              className="bg-marron-nuez h-30 grow p-3 resize-none rounded-[5px] border-[3px] border-marron-claro text-white outline-none placeholder:text-white/50"
               id="texto"
               placeholder="Escribí tus dudas aquí..."
               {...register("texto")}
@@ -176,8 +176,7 @@ export const Formulario = () => {
 
           <div className="w-full flex justify-end">
             <button
-              className="w-full md:w-auto px-12 py-3 rounded-lg bg-marron-cafe text-white font-bold cursor-pointer transition-all 
-           transition delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:border-marron-cafe hover:bg-marron-claro hover:text-black 
+              className="w-full md:w-auto px-12 py-3 rounded-lg bg-marron-cafe text-white font-bold cursor-pointer transition-all delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:border-marron-cafe hover:bg-marron-claro hover:text-black 
            border-2 border-marron-claro"
               id="submit"
               type="submit"
